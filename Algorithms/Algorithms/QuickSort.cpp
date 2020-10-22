@@ -35,3 +35,20 @@ void quicksort(int* arr, int lo, int hi)
 		quicksort(arr, part + 1, hi);
 	}
 }
+
+int partation2(int *arr, int l, int r)
+{
+	int pivot = arr[l];
+	int i = l+1;
+	for (size_t j = l+1; i < r; i++)
+	{
+		if (arr[j] < pivot)
+		{
+			swap(arr[i], arr[j]);
+			i++;
+		}
+	}
+
+	swap(arr[i], arr[l]);
+	return i;
+}
